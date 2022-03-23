@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="Touch_Keyboard_AEP.KeyboardKey"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Touch_Keyboard_AEP"
+             mc:Ignorable="d" x:Name="key"
+             Height="50" Width="50" 
+             MouseDown="key_MouseDown" MouseUp="key_MouseUp" MouseLeave="key_MouseLeave">
+
+    <Border x:Name="border" Background="DarkGray" BorderThickness="1" BorderBrush="Black" CornerRadius="5">
+        <Grid>
+            <TextBlock Text="{Binding ElementName=key, Path=KeyText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
+        </Grid>
+    </Border>
+
+</UserControl>
