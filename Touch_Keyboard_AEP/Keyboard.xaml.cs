@@ -96,12 +96,12 @@ namespace Touch_Keyboard_AEP
                 if (key.KeyText != "⇪")
                     key.KeyUp += (s, e) => { Keypressed(e); };
             }
-            foreach (var child in gRow5.Children)
-            {
-                var key = child as KeyboardKey;
-                key.txtText.FontSize = converter.Convert(this.ActualHeight);
-                key.KeyUp += (s, e) => { Keypressed(e); };
-            }
+            //foreach (var child in gRow5.Children)
+            //{
+            //    var key = child as KeyboardKey;
+            //    key.txtText.FontSize = converter.Convert(this.ActualHeight);
+            //    key.KeyUp += (s, e) => { Keypressed(e); };
+            //}
         }
         private void Keypressed(string key)
         {

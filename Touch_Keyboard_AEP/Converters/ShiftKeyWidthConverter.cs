@@ -11,7 +11,7 @@ namespace Touch_Keyboard_AEP.Converters
     public class ShiftKeyWidthConverter : IValueConverter
     {
         private static double KeyWidth = 108;
-        private static double KeyboardWidth = 800; //300:50
+        private static double KeyboardWidth = 800;
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value != null)
@@ -22,7 +22,6 @@ namespace Touch_Keyboard_AEP.Converters
             }
             return KeyWidth;
         }
-
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();

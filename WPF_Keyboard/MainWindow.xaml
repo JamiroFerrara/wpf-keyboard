@@ -20,6 +20,6 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <TextBox Height="50" x:Name="tb1" FontSize="20" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
-        <keyboard:Keyboard Height="600" Layout="ITA_QWERTY" Width="{Binding ElementName=keyboard, Path=Height, Converter={StaticResource KeyboardHeightConverter}}" Grid.Row="1" x:Name="keyboard"/>
+        <keyboard:Keyboard Height="{Binding ElementName=keyboard, Path=Width, Converter={StaticResource KeyboardHeightConverter}}" Layout="ITA_QWERTY" Width="1200" Grid.Row="1" x:Name="keyboard"/>
     </Grid>
 </Window>

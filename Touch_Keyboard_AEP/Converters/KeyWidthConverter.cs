@@ -10,7 +10,7 @@ namespace Touch_Keyboard_AEP.Converters
 {
     public class KeyWidthConverter : IValueConverter
     {
-        private static double KeyWidth = 50;
+        private static double KeyWidth = 48.50;
         private static double KeyboardWidth = 800; //800:50
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

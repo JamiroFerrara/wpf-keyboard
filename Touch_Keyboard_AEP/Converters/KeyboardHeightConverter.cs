@@ -10,14 +10,14 @@ namespace Touch_Keyboard_AEP.Converters
 {
     public class KeyboardHeightConverter : IValueConverter
     {
-        private static double KeyboardHeight = 300;
+        private static double KeyboardHeight = 295;
         private static double KeyboardWidth = 800; //300:50
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value != null)
             {
                 var keyboardWidth = (double)value;
-                var keyHeight = keyboardWidth / (KeyboardHeight / KeyboardWidth);
+                var keyHeight = keyboardWidth / (KeyboardWidth / KeyboardHeight);
                 return keyHeight;
             }
             return KeyboardHeight;

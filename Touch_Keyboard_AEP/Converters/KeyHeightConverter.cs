@@ -10,8 +10,8 @@ namespace Touch_Keyboard_AEP.Converters
 {
     public class KeyHeightConverter : IValueConverter
     {
-        private static double KeyHeight = 50;
-        private static double KeyboardHeight = 300; //300:50
+        private static double KeyHeight = 48.50;
+        private static double KeyboardHeight = 285; //300:50
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value != null)
