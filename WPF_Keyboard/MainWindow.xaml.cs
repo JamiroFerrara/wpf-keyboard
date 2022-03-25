@@ -21,6 +21,11 @@ namespace WPF_Keyboard
         {
             InitializeComponent();
             this.keyboard.KeyPressedEvent += (s, e) => { tb1.Text = tb1.Text + e; };
+            this.keyboard.DeleteKeyPressedEvent += (s, e) =>
+            {
+                if (tb1.Text != "")
+                    tb1.Text = tb1.Text.Substring(0, tb1.Text.Length - 1);
+            };
         }
     }
 }

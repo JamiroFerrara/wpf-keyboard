@@ -5,14 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_Keyboard"
         xmlns:keyboard="clr-namespace:Touch_Keyboard_AEP;assembly=Touch_Keyboard_AEP"
+        xmlns:converters="clr-namespace:Touch_Keyboard_AEP.Converters;assembly=Touch_Keyboard_AEP"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="1080" Width="1920">
+
+    <Window.Resources>
+        <converters:KeyboardHeightConverter x:Key="KeyboardHeightConverter"/>
+        <converters:KeyboardFontSizeConverter x:Key="KeyboardFontSizeConverter"/>
+    </Window.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBox Height="250" x:Name="tb1" FontSize="20" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
-        <keyboard:Keyboard Grid.Row="1" x:Name="keyboard"/>
+        <TextBox Height="50" x:Name="tb1" FontSize="20" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+        <keyboard:Keyboard Height="600" Layout="ITA_QWERTY" Width="{Binding ElementName=keyboard, Path=Height, Converter={StaticResource KeyboardHeightConverter}}" Grid.Row="1" x:Name="keyboard"/>
     </Grid>
 </Window>

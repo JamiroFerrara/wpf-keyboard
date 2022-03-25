@@ -3,20 +3,91 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:converters="clr-namespace:Touch_Keyboard_AEP.Converters"
              xmlns:local="clr-namespace:Touch_Keyboard_AEP"
-             mc:Ignorable="d" 
-             Height="300" Width="800">
-    <Border BorderBrush="black" BorderThickness="2" CornerRadius="5">
-        <Grid Margin="10">
+             mc:Ignorable="d" x:Name="kb"
+             d:DesignHeight="600" d:DesignWidth="1600">
+
+    <UserControl.Resources>
+        <converters:KeyHeightConverter x:Key="KeyHeightConverter"/>
+        <converters:KeyWidthConverter x:Key="KeyWidthConverter"/>
+        <converters:DeleteKeyWidthConverter x:Key="DeleteKeyWidthConverter"/>
+        <converters:DeleteGridWidthConverter x:Key="DeleteGridWidthConverter"/>
+        <converters:ShiftKeyWidthConverter x:Key="ShiftKeyWidthConverter"/>
+        <converters:SpacebarKeyWidthConverter x:Key="SpacebarKeyWidthConverter"/>
+    </UserControl.Resources>
+
+    <Border BorderBrush="black" BorderThickness="2" CornerRadius="5" Background="#292929">
+        <Grid Margin="20">
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Grid Grid.Row="0" x:Name="gRow1">
+            <Grid Grid.Row="0" x:Name="gRow1" Margin="25,5,20,5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource DeleteGridWidthConverter}}"/>
+                </Grid.ColumnDefinitions>
+                <local:KeyboardKey x:Name="k1" KeyText="1" Grid.Column="1" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k2" KeyText="2" Grid.Column="2" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k3" KeyText="3" Grid.Column="3" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k4" KeyText="4" Grid.Column="4" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k5" KeyText="5" Grid.Column="5" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k6" KeyText="6" Grid.Column="6" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k7" KeyText="7" Grid.Column="7" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k8" KeyText="8" Grid.Column="8" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k9" KeyText="9" Grid.Column="9" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k10" KeyText="0" Grid.Column="10" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k11" KeyText="ì" Grid.Column="11" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k0" KeyText="←" Grid.Column="12" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource DeleteKeyWidthConverter}}" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}"/>
+            </Grid>
+
+            <Grid Grid.Row="1" x:Name="gRow2" Margin="55,5,20,5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="25"/>
+                </Grid.ColumnDefinitions>
+                <local:KeyboardKey x:Name="k12" KeyText="q" Grid.Column="0" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k13" KeyText="w" Grid.Column="1" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k14" KeyText="e" Grid.Column="2" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k15" KeyText="r" Grid.Column="3" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k16" KeyText="t" Grid.Column="4" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k17" KeyText="y" Grid.Column="5" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k18" KeyText="u" Grid.Column="6" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k19" KeyText="i" Grid.Column="7" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k20" KeyText="o" Grid.Column="8" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k21" KeyText="p" Grid.Column="9" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k22" KeyText="è" Grid.Column="10" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k23" KeyText="+" Grid.Column="11" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+            </Grid>
+
+            <Grid Grid.Row="2" x:Name="gRow3" Margin="75,5,20,5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
@@ -31,79 +102,21 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <local:KeyboardKey KeyText="1" Grid.Column="0"/>
-                <local:KeyboardKey KeyText="2" Grid.Column="1"/>
-                <local:KeyboardKey KeyText="3" Grid.Column="2"/>
-                <local:KeyboardKey KeyText="4" Grid.Column="3"/>
-                <local:KeyboardKey KeyText="5" Grid.Column="4"/>
-                <local:KeyboardKey KeyText="5" Grid.Column="5"/>
-                <local:KeyboardKey KeyText="6" Grid.Column="6"/>
-                <local:KeyboardKey KeyText="7" Grid.Column="7"/>
-                <local:KeyboardKey KeyText="8" Grid.Column="8"/>
-                <local:KeyboardKey KeyText="9" Grid.Column="9"/>
-                <local:KeyboardKey KeyText="0" Grid.Column="10"/>
-                <local:KeyboardKey KeyText="ì" Grid.Column="11"/>
+                <local:KeyboardKey x:Name="k24" KeyText="a" Grid.Column="0" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k25" KeyText="s" Grid.Column="1" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k26" KeyText="d" Grid.Column="2" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k27" KeyText="f" Grid.Column="3" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k28" KeyText="g" Grid.Column="4" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k29" KeyText="h" Grid.Column="5" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k30" KeyText="j" Grid.Column="6" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k31" KeyText="k" Grid.Column="7" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k32" KeyText="l" Grid.Column="8" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k33" KeyText="ò" Grid.Column="9" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k34" KeyText="à" Grid.Column="10" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k35" KeyText="ù" Grid.Column="11" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
             </Grid>
 
-            <Grid Grid.Row="1" x:Name="gRow2" Margin="50,0,0,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <local:KeyboardKey KeyText="q" Grid.Column="0"/>
-                <local:KeyboardKey KeyText="w" Grid.Column="1"/>
-                <local:KeyboardKey KeyText="e" Grid.Column="2"/>
-                <local:KeyboardKey KeyText="r" Grid.Column="3"/>
-                <local:KeyboardKey KeyText="t" Grid.Column="4"/>
-                <local:KeyboardKey KeyText="y" Grid.Column="5"/>
-                <local:KeyboardKey KeyText="u" Grid.Column="6"/>
-                <local:KeyboardKey KeyText="i" Grid.Column="7"/>
-                <local:KeyboardKey KeyText="o" Grid.Column="8"/>
-                <local:KeyboardKey KeyText="p" Grid.Column="9"/>
-                <local:KeyboardKey KeyText="è" Grid.Column="10"/>
-                <local:KeyboardKey KeyText="+" Grid.Column="11"/>
-            </Grid>
-
-            <Grid Grid.Row="2" x:Name="gRow3" Margin="75,0,0,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <local:KeyboardKey KeyText="a" Grid.Column="0"/>
-                <local:KeyboardKey KeyText="s" Grid.Column="1"/>
-                <local:KeyboardKey KeyText="d" Grid.Column="2"/>
-                <local:KeyboardKey KeyText="f" Grid.Column="3"/>
-                <local:KeyboardKey KeyText="g" Grid.Column="4"/>
-                <local:KeyboardKey KeyText="h" Grid.Column="5"/>
-                <local:KeyboardKey KeyText="j" Grid.Column="6"/>
-                <local:KeyboardKey KeyText="k" Grid.Column="7"/>
-                <local:KeyboardKey KeyText="l" Grid.Column="8"/>
-                <local:KeyboardKey KeyText="ò" Grid.Column="9"/>
-                <local:KeyboardKey KeyText="à" Grid.Column="10"/>
-                <local:KeyboardKey KeyText="ù" Grid.Column="11"/>
-            </Grid>
-
-            <Grid Grid.Row="3" x:Name="gRow4" Margin="0,0,0,0">
+            <Grid Grid.Row="3" x:Name="gRow4" Margin="0,5,20,5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="2*"/>
                     <ColumnDefinition Width="1*"/>
@@ -118,26 +131,26 @@
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <local:KeyboardKey Width="100" KeyText="MAIUSC" Grid.Column="0" MouseDown="Uppercase_Down"/>
-                <local:KeyboardKey KeyText="z" Grid.Column="1"/>
-                <local:KeyboardKey KeyText="x" Grid.Column="2"/>
-                <local:KeyboardKey KeyText="c" Grid.Column="3"/>
-                <local:KeyboardKey KeyText="v" Grid.Column="4"/>
-                <local:KeyboardKey KeyText="b" Grid.Column="5"/>
-                <local:KeyboardKey KeyText="n" Grid.Column="6"/>
-                <local:KeyboardKey KeyText="m" Grid.Column="7"/>
-                <local:KeyboardKey KeyText="," Grid.Column="8"/>
-                <local:KeyboardKey KeyText="." Grid.Column="9"/>
-                <local:KeyboardKey KeyText="-" Grid.Column="10"/>
-                <local:KeyboardKey KeyText=""  Grid.Column="11"/>
+                <local:KeyboardKey x:Name="k36" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource ShiftKeyWidthConverter}}" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" KeyText="⇪" Grid.Column="0" MouseDown="Uppercase_Down"/>
+                <local:KeyboardKey x:Name="k37" KeyText="z" Grid.Column="1" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k38" KeyText="x" Grid.Column="2" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k39" KeyText="c" Grid.Column="3" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k40" KeyText="v" Grid.Column="4" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k41" KeyText="b" Grid.Column="5" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k42" KeyText="n" Grid.Column="6" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k43" KeyText="m" Grid.Column="7" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k44" KeyText="," Grid.Column="8" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k45" KeyText="." Grid.Column="9" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
+                <local:KeyboardKey x:Name="k46" KeyText="-" Grid.Column="10" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
             </Grid>
 
-            <Grid Grid.Row="4" x:Name="gRow5" Margin="0,0,0,0">
+            <Grid Grid.Row="4" x:Name="gRow5" Margin="0,5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <local:KeyboardKey Width="600" KeyText=" " Grid.Column="0"/>
+                <local:KeyboardKey Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource SpacebarKeyWidthConverter}}" KeyText=" " Grid.Column="0" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}"/>
             </Grid>
         </Grid>
     </Border>
+
 </UserControl>
