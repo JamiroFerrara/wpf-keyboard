@@ -12,6 +12,7 @@ namespace Touch_Keyboard_AEP.Converters
     {
         private static double KeyHeight = 48.50;
         private static double KeyboardHeight = 285; //300:50
+
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value != null)
@@ -22,7 +23,6 @@ namespace Touch_Keyboard_AEP.Converters
             }
             return KeyHeight;
         }
-
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();

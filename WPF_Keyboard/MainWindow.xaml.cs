@@ -20,7 +20,10 @@ namespace WPF_Keyboard
         public MainWindow()
         {
             InitializeComponent();
-            this.keyboard.KeyPressedEvent += (s, e) => { tb1.Text = tb1.Text + e; };
+            this.keyboard.KeyPressedEvent += (s, e) =>
+            {
+                tb1.Text = tb1.Text + e;
+            };
             this.keyboard.DeleteKeyPressedEvent += (s, e) =>
             {
                 if (tb1.Text != "")

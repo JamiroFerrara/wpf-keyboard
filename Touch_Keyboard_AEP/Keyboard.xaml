@@ -149,7 +149,7 @@
                 <local:KeyboardKey x:Name="k46" KeyText="-" Grid.Column="10" Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource KeyWidthConverter}}"/>
             </Grid>
 
-            <local:KeyboardKey Grid.Row="9" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource SpacebarKeyWidthConverter}}" KeyText=" " Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}"/>
+            <local:KeyboardKey x:Name="kSpace" Grid.Row="9" Width="{Binding ElementName=kb, Path=Width, Converter={StaticResource SpacebarKeyWidthConverter}}" KeyText=" " Height="{Binding ElementName=kb, Path=Height, Converter={StaticResource KeyHeightConverter}}"/>
         </Grid>
     </Border>
 

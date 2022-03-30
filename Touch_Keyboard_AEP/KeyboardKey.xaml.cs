@@ -20,7 +20,7 @@ namespace Touch_Keyboard_AEP
         public EventHandler<string> KeyDown = (s, e) => { };
         public EventHandler<string> KeyUp = (s, e) => { };
 
-        SolidColorBrush background = (SolidColorBrush)new BrushConverter().ConvertFrom("#9e9e9e");
+        SolidColorBrush background = new SolidColorBrush(Colors.Transparent);
         SolidColorBrush backgroundPressed = new SolidColorBrush(Colors.Gray);
 
         public double OriginalWidth { get; set; }

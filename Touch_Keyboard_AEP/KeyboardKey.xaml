@@ -8,9 +8,9 @@
              Height="50" Width="50"
              MouseDown="key_MouseDown" MouseUp="key_MouseUp" MouseLeave="key_MouseLeave">
 
-    <Border x:Name="border" Background="#9e9e9e" BorderThickness="1" BorderBrush="Black" CornerRadius="5">
+    <Border x:Name="border" Background="Transparent" BorderThickness="1" BorderBrush="White" CornerRadius="5">
         <Grid>
-            <TextBlock x:Name="txtText" Text="{Binding ElementName=key, Path=KeyText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{Binding ElementName=key, Path=KFontSize}"/>
+            <TextBlock x:Name="txtText" Foreground="White" Text="{Binding ElementName=key, Path=KeyText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{Binding ElementName=key, Path=KFontSize}"/>
         </Grid>
     </Border>
 
